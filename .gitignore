@@ -1,3 +1,4 @@
-/django-app/logs/*
-/django-app/daemons/*
+/django-app/logs/*.log
+/django-app/daemons/*.pid
 /django-app/.idea/*
+/vue-app/.idea/*
