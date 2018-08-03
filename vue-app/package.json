@@ -1,0 +1,44 @@
+{
+  "name": "front",
+  "version": "0.0.0",
+  "scripts": {
+    "serve": "vue-cli-service serve --mode development --open",
+    "build": "vue-cli-service build --mode production",
+    "test": "vue-cli-service test:unit --mode development",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.6",
+    "actioncable": "^5.2.0",
+    "axios": "^0.18.0",
+    "buefy": "^0.6.3",
+    "debounce": "^1.1.0",
+    "dotenv": "^6.0.0",
+    "es6-promise": "^4.2.4",
+    "global-package-version": "^1.1.0",
+    "jwt-decode": "^2.2.0",
+    "vue": "^2.5.13",
+    "vue-axios": "^2.0.2",
+    "vue-infinite-loading": "^2.3.1",
+    "vue-pell-editor": "^1.0.1",
+    "vue-router": "^3.0.1",
+    "vue-silentbox": "^0.1.1",
+    "vue-timeago": "^5.0.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^3.0.0-rc.9",
+    "@vue/eslint-config-standard": "^3.0.0-rc.9",
+    "chai": "^4.1.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

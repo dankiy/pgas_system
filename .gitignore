@@ -1,0 +1,3 @@
+/django-app/logs/*
+/django-app/daemons/*
+/django-app/.idea/*

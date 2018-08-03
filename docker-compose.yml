@@ -1,22 +1,35 @@
-postgresql:
-  image: postgres
-  env_file: .env
-  volumes:
-    - /var/lib/postgresql/data/pgdata
-  ports:
-    - "5433:5432"
+version: '2'
 
-project:
-  build: ./
-  env_file: .env
-  working_dir: /opt/project
-  command: bash -c "sleep 3 && supervisord -n"
-  volumes:
-    - ./django-app:/opt/project
-    - ./supervisord.conf:/etc/supervisord.conf
-    - ./djangod.conf:/etc/djangod.conf
-  links:
-    - postgresql
-  ports:
-    - "8005:8000"
-    - "2225:22"
+services:
+
+  postgresql:
+    image: postgres
+    env_file: .env
+    volumes:
+      - "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5433:5432"
+
+  front:
+    build:
+      context: ./vue-app
+      dockerfile: Dockerfile
+    volumes:
+      - "./vue-app:/front"
+    ports:
+      - "8085:8080"
+
+  back:
+    build:
+      context: ./django-app
+      dockerfile: Dockerfile
+    env_file: .env
+    working_dir: /opt/project
+    command: bash -c "sleep 3 && supervisord -n"
+    volumes:
+      - "./django-app:/opt/project"
+    links:
+      - postgresql
+    ports:
+      - "8005:8000"
+      - "2225:22"
