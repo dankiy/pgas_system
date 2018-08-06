@@ -1,15 +1,15 @@
-import 'es6-promise/auto'
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import 'buefy/lib/buefy.css'
-import '@fortawesome/fontawesome-free-webfonts/css/fontawesome.css'
-import '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css'
-import '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css'
-import '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css'
+import App from './App'
+import router from './router'
 
+Vue.config.productionTip = false
 
-import App from '@/App.vue'
-
-
+/* eslint-disable no-new */
 new Vue({
-  render: h => h(App)
-}).$mount('#app')
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})

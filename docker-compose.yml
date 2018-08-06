@@ -17,7 +17,7 @@ services:
     volumes:
       - "./vue-app:/front"
     ports:
-      - "8085:8080"
+      - "80:8080"
 
   back:
     build:
@@ -31,5 +31,5 @@ services:
     links:
       - postgresql
     ports:
-      - "8005:8000"
+      - "8080:8000"
       - "2225:22"
